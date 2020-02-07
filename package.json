@@ -1,0 +1,36 @@
+{
+  "name": "work_break_timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "lite-server",
+    "db": "json-server --watch db.json --port 3005",
+    "start": "concurrently -k \"npm run dev\" \"npm run db\"",
+    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js",
+    "lint": "jshint src/**.js",
+    "sass": "node-sass --include-path scss scss/main.scss assets/main.css",
+    "test": "mocha test",
+    "bash": "Location of the Bash/Shell script file",
+    "build-js": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carsonkaylor1/Work-Break.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carsonkaylor1/Work-Break/issues"
+  },
+  "homepage": "https://github.com/carsonkaylor1/Work-Break#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "jshint": "^2.11.0",
+    "lite-server": "^2.5.4",
+    "mocha": "^7.0.1",
+    "node-sass": "^4.13.1",
+    "uglify-js": "^3.7.7"
+  }
+}
