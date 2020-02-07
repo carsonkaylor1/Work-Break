@@ -34,7 +34,7 @@ function startTimer(timeValue){
         alertStartSound.play();
         PRbtn.disabled = false;
         playbtn.disabled = false;
-        document.body.style.background = '#cc1616';
+        document.body.style.background = 'linear-gradient(to right, #e52d27, #b31217)';
         document.getElementById('status').innerHTML = 'Work Time!'
         clearInterval(interval);
         clock = timeValue;
@@ -73,7 +73,7 @@ function startBreakTimer(timeValue){
     alertStartSound.play();
     PRbtn.disabled = false;
     playbtn.disabled = false;
-    document.body.style.background = '#158519';
+    document.body.style.background = 'linear-gradient(to right, #45B649, #DCE35B)';
     document.getElementById('status').innerHTML = 'Woohoo Break Time!';
     clearInterval(interval);
     isWorkClock = false;
