@@ -34,6 +34,8 @@ function startTimer(timeValue){
         alertStartSound.play();
         PRbtn.disabled = false;
         playbtn.disabled = false;
+        document.body.style.background = '#e52d27';
+        document.body.style.background = '-webkit-linear-gradient(to right, #e52d27, #b31217)'
         document.body.style.background = 'linear-gradient(to right, #e52d27, #b31217)';
         document.getElementById('status').innerHTML = 'Work Time!'
         clearInterval(interval);
@@ -73,6 +75,8 @@ function startBreakTimer(timeValue){
     alertStartSound.play();
     PRbtn.disabled = false;
     playbtn.disabled = false;
+    document.body.style.background = '#dce35b';
+    document.body.style.background = '-webkit-linear-gradient(to right, #45b649, #dce35b)'
     document.body.style.background = 'linear-gradient(to right, #45B649, #DCE35B)';
     document.getElementById('status').innerHTML = 'Woohoo Break Time!';
     clearInterval(interval);
