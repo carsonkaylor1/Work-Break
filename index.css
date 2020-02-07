@@ -1,0 +1,112 @@
+
+body{
+    background: #158519;
+    z-index: 10;
+}
+
+#Title{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'PT Mono', monospace;
+    font-size: 64px;
+}
+
+.titleInfo{
+    text-align: left;
+    font-family: 'PT Mono', monospace;
+}
+
+.titleFlexBox{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3%;
+}
+
+#status{
+    font-family: 'PT Mono', monospace;
+    font-size: 36px;
+    margin-top: 3%;
+}
+
+#label1{
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+}
+#label2{
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+}
+
+#continueDiv{
+    text-align: center;
+}
+#continueDiv button:hover{
+    background-color: black;
+    color: white;
+}
+
+/* input boxes */
+.times{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+ #studyTime{
+    margin: 2% 5%;
+    font-size: 24px;
+    border-radius: 4px;
+    border:none;
+    padding: 16px 20px;
+}
+#breakTime{
+    font-size: 24px;
+    margin: 2% 5%;
+    border-radius: 4px;
+    border:none;
+    padding: 16px 20px;
+} 
+
+
+
+/* time left */
+.timeLeft{
+    text-align: center;
+    margin-top: 2%;
+}
+#Minutes{
+    font-size: 42px;
+    font-family: 'PT Mono', monospace;
+}
+
+/* buttons */
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+}
+#startTimer{
+    margin: 0 4%;
+    font-size: 100px;
+    transition-duration: 0.4s;
+    background-color: transparent;
+    border: none;
+    
+}
+#pauseTimer{
+    margin: 0 4%;
+    font-size: 100px;
+    transition-duration: 0.4s;
+    background-color: transparent;
+    border: none;
+}
+#startTimer:hover {    
+    color: white;
+  }
+#pauseTimer:hover {
+    color: white;
+  }
+
+

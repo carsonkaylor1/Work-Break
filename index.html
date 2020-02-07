@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link>
+        <meta charset="UTF-8">
+        <title>Section 2: JS Basics</title>
+        <link rel='stylesheet' href='index.css'>
+        <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <body>
+        <div id='tomatoDiv'>
+            
+        </div>     
+        <h1 id='Title'>The Work/Break Timer</h1>
+        <div class='titleFlexBox'>
+        <div class='titleInfo'>
+            <h3>Enter your desired <i>work</i> time and desired <i>break</i> time.</h3>
+            <h3>Complete work periods to earn tomatoes!</h3>
+        </div>
+        </div>
+        <div>
+            <div class='times'>
+                <h2 id='label1'>Work Time
+                    <input id='studyTime' placeholder="Enter Work Time (minutes)"></input>
+                </h2>
+                <h2 id='label2'>Break Time
+                    <input id='breakTime' placeholder="Enter Break Time (minutes)"></input>
+                </h2>
+                
+            </div>
+            <div class='timeLeft'>
+                <h2 id='status'></h2>
+                <p id='Minutes'></p>
+            </div>
+            <div id='continueDiv'></div>
+            <div class='buttons'>
+                <button id='startTimer' onclick='start()'><i class="fas fa-play"></i></button>
+                <button id='pauseTimer' onclick='pauseTimer()'><i class="fas fa-pause"></i></button>
+            </div>
+            
+        </div>
+    </body>
+
+    <script src='script.js'></script>
+</html>
