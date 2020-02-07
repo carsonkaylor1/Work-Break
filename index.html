@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
         <title>Work Break Timer</title>
         <meta name="description" content="Work Break Timer is a flexible and easy to use online Pomodoro Technique Timer">
         <meta name="keywords" content="pomodoro technique, tomato timer, pomodoro timer, online pomodoro timer, software timer, pomodoro software timer, productivity tools, gtd, getting things done, productivity, digital timer, concentration techniques, pomodoro resources, pomodoro software">
@@ -9,16 +10,15 @@
         <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <link rel="icon" href='https://i.imgur.com/DIoW5NE.png'>
-    <body>
-        <div id='tomatoDiv'>
-            
-        </div>     
-        <h1 id='Title'>The Work/Break Timer!</h1>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+    <body id="body">
+        
+        <div class='Title'>
+            <h1>The Work/Break Timer!</h1>
+        </div>   
         <div class='titleFlexBox'>
-        <div class='titleInfo'>
-            <h3>Enter your desired <i>work</i> time and desired <i>break</i> time.</h3>
-            <h3>Complete work periods to earn tomatoes!</h3>
-        </div>
+            <h4><i>Complete work periods to earn tomatoes!</i></h4>
         </div>
         <div>
             <div class='times'>
@@ -27,12 +27,11 @@
                 </h2>
                 <h2 id='label2'>Break Time
                     <input id='breakTime' placeholder="Enter Break Time (minutes)"></input>
-                </h2>
-                
+                </h2>    
             </div>
             <div class='timeLeft'>
-                <h2 id='status'></h2>
-                <p id='Minutes'></p>
+                <h2 id='status'>Press Play Button to Start</h2>
+                <p id='minutes'>00:00</p>
             </div>
             <div id='continueDiv'></div>
             <div class='buttons'>

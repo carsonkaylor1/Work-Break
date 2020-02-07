@@ -45,7 +45,7 @@ function startTimer(timeValue){
                 minutes = Math.floor(clock/60);
                 seconds = Math.floor(clock%60);
                 seconds < 10 ? seconds = '0' + seconds : seconds;
-                document.getElementById('Minutes').innerHTML = (minutes + ':' + seconds);
+                document.getElementById('minutes').innerHTML = (minutes + ':' + seconds);
             }
             else{
                 alertEndSound.play();
@@ -85,7 +85,7 @@ function startBreakTimer(timeValue){
                 minutes = Math.floor(clock/60);
                 seconds = Math.floor(clock%60);
                 seconds < 10 ? seconds = '0' + seconds : seconds;
-                document.getElementById('Minutes').innerHTML = (minutes + ':' + seconds);
+                document.getElementById('minutes').innerHTML = (minutes + ':' + seconds);
             }
             else{
                 alertEndSound.play();
@@ -136,7 +136,7 @@ function showContinueButton(){
 }
 
 function insertTomato(){
-    var destination = document.getElementById('tomatoDiv');
+    var destination = document.getElementById('body');
     var newTomato = document.createElement('img');
     newTomato.src = 'https://i.imgur.com/DIoW5NE.png';
     destination.appendChild(newTomato);
