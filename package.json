@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "dev": "lite-server",
-    "db": "json-server --watch db.json --port 3005",
+    "db": "json-server --watch db.json --port 3000",
     "start": "concurrently -k \"npm run dev\" \"npm run db\"",
     "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js",
     "lint": "jshint src/**.js",
@@ -13,7 +13,6 @@
     "test": "mocha test",
     "bash": "Location of the Bash/Shell script file",
     "build-js": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js"
-
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 var clock, breakClock, workClock, interval, isWorkClock;
-var minutes, seconds;
+var minutes, seconds, totalTime;
 var isPaused;
 var PRbtn = document.getElementById('pauseTimer');
 var playbtn = document.getElementById('startTimer');
@@ -11,7 +11,7 @@ var alertEndSound = new sound('sounds/end_sound.mp3');
 function start(){
     var wClock = document.getElementById('studyTime').value * 60;
     var bClock = document.getElementById('breakTime').value * 60;
-    if(wClock > 0 && bClock > 0){
+    if(wClock > 0 && wClock <= 100000 && bClock > 0 && bClock <= 100000){
         workClock = wClock;
         breakClock = bClock;
     }
@@ -34,8 +34,8 @@ function startTimer(timeValue){
         alertStartSound.play();
         PRbtn.disabled = false;
         playbtn.disabled = false;
-        document.body.style.background = '#e52d27';
-        document.body.style.background = '-webkit-linear-gradient(to right, #e52d27, #b31217)'
+//        document.body.style.background = '#e52d27';
+//        document.body.style.background = '-webkit-linear-gradient(to right, #e52d27, #b31217)'
         document.body.style.background = 'linear-gradient(to right, #e52d27, #b31217)';
         document.getElementById('status').innerHTML = 'Work Time!'
         clearInterval(interval);
@@ -47,15 +47,20 @@ function startTimer(timeValue){
                 minutes = Math.floor(clock/60);
                 seconds = Math.floor(clock%60);
                 seconds < 10 ? seconds = '0' + seconds : seconds;
-                document.getElementById('minutes').innerHTML = (minutes + ':' + seconds);
+                minutes < 10 ? minutes = '0' + minutes : minutes;
+                totalTime = (minutes + ':' + seconds);
+                document.getElementById('minutes').innerHTML = totalTime;
+                document.getElementById('indexTitle').innerHTML = totalTime + ' Work Break Timer';
             }
             else{
                 alertEndSound.play();
                 PRbtn.disabled = true;
                 playbtn.disabled = true;
-                showContinueButton()
+                showContinueButton();
+                continueBtn.innerHTML = 'Continue to Break Timer';
                 clearInterval(interval);
                 alert('Take a Break!');
+                document.getElementById('status').innerHTML = '';
                 continueBtn.addEventListener('click', function(event){
                     insertTomato();
                     continueBtn.style.display = 'none';
@@ -75,8 +80,8 @@ function startBreakTimer(timeValue){
     alertStartSound.play();
     PRbtn.disabled = false;
     playbtn.disabled = false;
-    document.body.style.background = '#dce35b';
-    document.body.style.background = '-webkit-linear-gradient(to right, #45b649, #dce35b)'
+//    document.body.style.background = '#dce35b';
+//    document.body.style.background = '-webkit-linear-gradient(to right, #45b649, #dce35b)'
     document.body.style.background = 'linear-gradient(to right, #45B649, #DCE35B)';
     document.getElementById('status').innerHTML = 'Woohoo Break Time!';
     clearInterval(interval);
@@ -89,7 +94,10 @@ function startBreakTimer(timeValue){
                 minutes = Math.floor(clock/60);
                 seconds = Math.floor(clock%60);
                 seconds < 10 ? seconds = '0' + seconds : seconds;
-                document.getElementById('minutes').innerHTML = (minutes + ':' + seconds);
+                totalTime = (minutes + ':' + seconds);
+                minutes < 10 ? minutes = '0' + minutes : minutes;
+                document.getElementById('minutes').innerHTML = totalTime;
+                document.getElementById('indexTitle').innerHTML = totalTime + ' Work Break Timer';
             }
             else{
                 alertEndSound.play();
@@ -97,8 +105,10 @@ function startBreakTimer(timeValue){
                 playbtn.disabled = true;
                 isWorkClock = true;
                 showContinueButton();
+                continueBtn.innerHTML = 'Continue to Work Timer';
                 clearInterval(interval);
                 alert('Time to Work!');
+                document.getElementById('status').innerHTML = '';
                 continueBtn.addEventListener('click', function(event){
                     continueBtn.style.display = 'none';
                     startTimer(workClock);
@@ -128,7 +138,6 @@ function pauseTimer(){
 function showContinueButton(){
     var destination = document.getElementById('continueDiv');
     continueBtn = document.createElement('button');
-    continueBtn.innerHTML = 'Continue';
     destination.appendChild(continueBtn);
     continueBtnStyle = continueBtn.style;
     continueBtnStyle.fontSize = '24px';
